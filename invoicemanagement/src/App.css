@@ -1,0 +1,85 @@
+ @import url("https://cdn.syncfusion.com/ej2/material.css");
+
+
+ .first
+{
+  margin-top: 30px;
+  
+}
+
+
+input[type=text] {
+  width: 100%;
+  padding: 5px 8px;
+  border-radius: 5px;
+
+  box-sizing: border-box;
+  border: 1px solid grey;
+}
+
+.outer
+{
+  background-color: #F1F6FC;
+  border-radius: 10px;
+}
+
+.form-data
+{
+padding: 20px;
+  margin: 50px;
+}
+
+.button-column
+{
+  text-align: center;
+
+}
+
+.submit-btn
+{
+  width: 300px;
+
+  padding: 5px 8px;
+  border-radius: 5px;
+  background-color: #4589FE;
+  color: #fff;
+}
+
+.addnew-btn
+{
+  width: 120px;
+
+  padding: 5px 8px;
+  border-radius: 5px;
+  background-color:E5E6E8; 
+  color:black;
+}
+
+.first-input-tag
+{
+  padding: 5px 8px;
+  border-radius: 5px ;
+  /* box-shadow: -5px 0px 1px 1px #4589fe; */
+  border: 1px solid #4589fe !important;
+  border-left: 10px solid #4589fe !important;
+ 
+}
+
+
+
+
+.top-head{
+  height: 50px;
+  padding-top: 31px;
+}
+
+.select
+{
+  width: 100%;
+  padding: 5px 8px;
+  border-radius: 5px;
+
+  box-sizing: border-box;
+  border: 1px solid grey;
+  background-color: #fff;
+}
