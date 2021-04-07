@@ -1,18 +1,19 @@
 import React from "react";
-import { useForm,Controller } from "react-hook-form";
- import Datepicker from './Datepicker';
+import { useForm, Controller } from "react-hook-form";
+import Datepicker from './Datepicker';
 import { Container, Row, Col } from 'reactstrap';
-import Select from "react-select";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
+
+
 const Form = () => {
-  const {control, register, handleSubmit ,errors} = useForm();
+  const { control, register, handleSubmit, errors } = useForm();
   const onSubmit = (data) => console.log(data);
 
 
 
-  
+
   return (
 
     <>
@@ -23,27 +24,28 @@ const Form = () => {
             <h5 className="top-head"><b >INVOICE MANAGEMENT</b></h5>
             <Row className="first">
               <Col md="4">
-                <label for="Company name">company Name</label>
-                <input
+                <label for="From">From</label>
+                <input className="first-input-tag" placeholder="KeyMouseit"
                   type="text"
-                  {...register('company name', {required:true,
+                  {...register('From', {
+                    required: true,
                     max: 3
                   })}
                 />
               </Col>
               <Col md="4">
-                <label for="contact">Contact </label>
+                <label for="Created By">Created By </label>
                 <input
                   type="text"
-                  {...register('Contact', {
+                  {...register('Created By', {
                     max: 3
                   })}
                 /></Col>
               <Col md="4">
-                <label for="bill number">Bill Number</label>
+                <label for="To">To</label>
                 <input
                   type="text"
-                  {...register('bill number', {
+                  {...register('To', {
                     max: 3
                   })}
                 /></Col>
@@ -51,38 +53,38 @@ const Form = () => {
 
             <Row className="first">
               <Col md="3">
-                <label for="bill for">Amount</label>
+                <label for="Notes">Notes</label>
                 <input
                   type="text"
-                  {...register('Amount', {
+                  {...register('Notes', {
                     max: 3
                   })}
-                  />
+                />
               </Col>
 
 
               <Col md="3">
-                <label for="tax">Tax</label>
+                <label for="product name">Product Name</label>
                 <input
                   type="text"
-                  {...register('tax', {
+                  {...register('Product_Name', {
                     max: 3
                   })}
-                  /> </Col>
+                /> </Col>
 
               <Col md="3">
-                <label for="gst number">GST Number</label>
+                <label for="Quantity">Quantity</label>
                 <input
                   type="text"
-                  {...register('GST Number', {
+                  {...register('Quantity', {
                     max: 3
                   })}
-                  />
+                />
               </Col>
 
               <Col md="3">
-                 <label for="due_date">Due Date</label>
-                  {/* <Controller name="due_date" control={control} defaultValue={null}
+                <label for="due_date">Due Date</label>
+                {/* <Controller name="due_date" control={control} defaultValue={null}
                   render={
                     ({onChange, value})=><DatePicker   onChange={onChange} selected={value}
                     
@@ -90,44 +92,65 @@ const Form = () => {
 
                   }
                   />  */}
-                  
 
-                  {<Controller name="due_date" control={control} defaultValue={null}
-                     render={
-                      (p)=>{
-                     console.log(`onChange, value`, p.fields)
-                     return <DatePicker  selected={p.field.value}
-                     placeholderText="select date"  onChange={p.field.onChange}/>
 
-                   }
+                {<Controller name="due_date" control={control} defaultValue={null}
+                  render={
+                    (p) => {
+                      console.log(`onChange, value`, p.fields)
+                      return <DatePicker selected={p.field.value}
+                        placeholderText="select date   "  onChange={p.field.onChange} />
 
                     }
-                   />
+
                   }
-                
-                
+                />
+                }
+
+
               </Col>
             </Row>
 
 
             <Row className="first">
               <Col md="4">
-                <label for="total">Notes</label>
+                <label for="description">Description</label>
                 <input
                   type="text"
-                  {...register('Notes', {
+                  {...register('Discription', {
                     max: 3
                   })}
-                  />
+                />
               </Col>
-              <Col md="3">
+
+              <Col md="4">
+                <label for="price">Price</label>
+                <input
+                  type="text"
+                  {...register('Price', {
+                    max: 3
+                  })}
+                />
+              </Col>
+
+
+              <Col md="4">
+                <label for="Total">Total</label>
+                <input
+                  type="text"
+                  {...register('Total', {
+                    max: 3
+                  })}
+                /></Col>
+
+              {/* <Col md="3">
                 <label for="mode of payment">Mode of Payment</label>
                 <select {...register("Payment of Method")} className="select">
-        <option value="UPI">UPI</option>
-        <option value="Net banking">Net Banking</option>
-        <option value="Debit Card">Debit Card</option>
-      </select>
-              </Col>
+                  <option value="UPI">UPI</option>
+                  <option value="Net banking">Net Banking</option>
+                  <option value="Debit Card">Debit Card</option>
+                </select>
+              </Col> */}
 
             </Row>
             {/* 
@@ -146,55 +169,23 @@ const Form = () => {
               </Col>
             </Row> */}
             <Row className="first">
-              <Col md="3">
-                <label for="item type">Items  Type</label>
-                <input
-                  type="text"
-                  {...register('Items type', {
-                    max: 3
-                  })}
-                  />
-              </Col>
-              <Col md="3">
-                <label for="product name">Product Name</label>
-                <input
-                  type="text"
-                  {...register('product name', {
-                    max: 3
-                  })}
-                  /></Col>
-              <Col md="2">
-                <label for="Quantity">Quantity</label>
-                <input
-                  type="text"
-                  {...register('Quantity', {
-                    max: 3
-                  })}
-                  /></Col>
+            
+              <Col md="4">
+              <label for="status">Status</label>
+                <select {...register("Payment of Method")} className="select">
+                  <option value="UPI">Pending</option>
+                  <option value="Net banking">Under Review</option>
+                  <option value="Debit Card">Approved</option>
+                </select>
+                </Col>
 
-              <Col md="2">
-                <label for="price">Price</label>
-                <input type="text"
-                  {...register('price', {
-                    max: 3
-                  })}
-                  />
-              </Col>
-              <Col md="2">
-                <label for="total">Total</label>
-                <input type="text"
-                  {...register('Total', {
-                    max: 3
-                  })}
-                  />
-              </Col>
 
             </Row>
 
 
             <Row className="first">
               <Col className="button-column"  >
-                <button className="addnew-btn" >Add New <i class="far fa-plus-square"></i></button>
+                <button className="addnew-btn" ><i class="far fa-plus-square"> Add New </i></button>
               </Col>
 
             </Row>
